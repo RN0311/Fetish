@@ -1,0 +1,14 @@
+#ENCRYPTION
+openssl des  -a -salt -in large_file.txt -k "abc123" -out large_file.txt.enc
+
+des    => enc algo {use list-ciphers to get a list and then use any}
+-in    => input file (plain)
+-out   => out file (enc)
+-k     => password
+-salt  => ovbious
+-a     => ASCII Armored
+
+DECRYPTION
+openssl des  -a -d -salt -in large_file.txt.enc -k "abc123" -out large_file.txt
+
+-d     => decrypt
